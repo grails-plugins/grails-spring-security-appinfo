@@ -1,0 +1,5 @@
+stacktrace.log
+/target
+/docs
+/grails-spring-security-appinfo-*.zip
+/plugin.xml
