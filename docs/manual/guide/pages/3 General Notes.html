@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title>3 General Notes</title>
+        <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" title="Ref" charset="utf-8"/>
+    </head>
+    <body class="body">
+    <h4>Securing Access</h4><p class="paragraph"/>Be sure to guard access to the <code>/securityInfo</code> url since only authorized users should have access to this information. If you're using annotations, you can register a mapping in the <code>staticRules</code> property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugins.springsecurity.controllerAnnotations.staticRules = &#91;
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;
+&#93;</pre></div><p class="paragraph"/>If you use database Requestmaps, create a new one:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo/&#42;&#42;', configAttribute: 'ROLE_ADMIN').save()</pre></div><p class="paragraph"/>And if you use the <code>interceptUrlMap</code> approach, add the mapping to that property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugins.springsecurity.interceptUrlMap = &#91;
+   &#8230;
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
+   &#8230;
+&#93;</pre></div><p class="paragraph"/>
+    
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-16219500-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</body>
+</html>

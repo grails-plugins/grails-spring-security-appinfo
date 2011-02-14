@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Spring Security AppInfo Plugin 1.0 - Reference Documentation</title>
+        <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" title="Style" charset="utf-8"/>
+        <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
+    </head>
+    <body class="body">
+        <div id="header">
+            <div class="images"><br/><br/>
+                <a href="http://grails.org" target="_blank"><img alt="The Grails Framework" src="../img/grails.png" border="0"/></a>
+                <span style="right:30px; top:20px; position:absolute;">
+                    <a href="../index.html" target="_top">Frames</a> | <a href="index.html" target="_top">No Frames</a><br/><br/>
+                    <a href="http://springsource.com" target="_blank"><img alt="SpringSource - A Division of VMware" src="../img/springsource-logo.png" border="0"/></a>
+                </span>
+            </div>
+            <div class="message">grails-spring-security-appinfo</div>
+            <h1>Spring Security AppInfo Plugin - Reference Documentation</h1>
+            <p><strong>Authors:</strong> Burt Beckwith</p>
+            <p><strong>Version:</strong> 1.0</p>
+            <em></em>
+        </div>
+
+        <div id="toc">
+            <h2>Table of Contents</h2>
+            <div class="tocItem" style="margin-left:0px"><a href="#1 Introduction to the Spring Security AppInfo Plugin">1 Introduction to the Spring Security AppInfo Plugin</a></div><div class="tocItem" style="margin-left:0px"><a href="#2 Security Configuration UI">2 Security Configuration UI</a></div><div class="tocItem" style="margin-left:0px"><a href="#3 General Notes">3 General Notes</a></div>
+        </div>
+        <div id="content">
+            <h1><a name="1 Introduction to the Spring Security AppInfo Plugin">1 Introduction to the Spring Security AppInfo Plugin</a></h1>The Spring Security AppInfo plugin provides a UI to inspect your security configuration.<p class="paragraph"/><blockquote class="note">
+If you already have the spring-security-ui plugin installed you shouldn't install this plugin, since it's part of that plugin. It's split out here into its own for users who want this information but not the entire UI plugin.
+</blockquote><p class="paragraph"/><h4>Release History</h4>
+<ul class="star">
+<li>February 13, 2010</li>
+<ul class="star">
+<li>initial 1.0 release</li>
+</ul></ul><p class="paragraph"/><h1><a name="2 Security Configuration UI">2 Security Configuration UI</a></h1>The plugin has one controller (<code>SecurityInfoController.groovy</code>) and is available by navigating to <code>/appname/securityInfo</code>. There are eight menus:<p class="paragraph"/><h4>Configuration</h4><p class="paragraph"/>The Configuration menu item displays all security-related attributes in <code>Config.groovy</code>. The names omit the <code>grails.plugins.springsecurity</code> prefix:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_config.png"></img><p class="paragraph"/><h4>Mappings</h4><p class="paragraph"/>The Mappings menu item displays the current request mapping mode (Annotation, Requestmap, or Static) and all current mappings:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_mappings.png"></img><p class="paragraph"/><h4>Current Authentication</h4><p class="paragraph"/>The Current Authentication menu item displays your <code>Authentication</code> information, mostly for reference to see what a typical one contains:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_auth.png"></img><p class="paragraph"/><h4>User Cache</h4><p class="paragraph"/>The User Cache menu item displays information about cached users (this feature is disabled by default):<p class="paragraph"/><img border="0" class="center" src="../img/security_info_user_cache.png"></img><p class="paragraph"/><h4>Filter Chains</h4><p class="paragraph"/>The Filter Chains menu item displays your configured Filter chains. Typically there is just one chain, applied to all URLs<p class="paragraph"/><img border="0" class="center" src="../img/security_info_filter_chains.png"></img><p class="paragraph"/>It is possible to have multiple URL patterns each with its own filter chain, for example when using HTTP Basic Auth for a web service.<p class="paragraph"/><h4>Logout Handlers</h4><p class="paragraph"/>The Logout Handlers menu item displays your registered <code>LogoutHandler</code>s. Typically there will be just the two shown here, but you can register your own custom implementations, or a plugin might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_logout_handlers.png"></img><p class="paragraph"/><h4>Voters</h4><p class="paragraph"/>The Voters menu item displays your registered <code>AccessDecisionVoter</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_voters.png"></img><p class="paragraph"/><h4>Authentication Providers</h4><p class="paragraph"/>The Authentication Providers menu item displays your registered <code>AuthenticationProvider</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin (e.g. LDAP) might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_providers.png"></img><p class="paragraph"/><h1><a name="3 General Notes">3 General Notes</a></h1><h4>Securing Access</h4><p class="paragraph"/>Be sure to guard access to the <code>/securityInfo</code> url since only authorized users should have access to this information. If you're using annotations, you can register a mapping in the <code>staticRules</code> property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugins.springsecurity.controllerAnnotations.staticRules = &#91;
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;
+&#93;</pre></div><p class="paragraph"/>If you use database Requestmaps, create a new one:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo/&#42;&#42;', configAttribute: 'ROLE_ADMIN').save()</pre></div><p class="paragraph"/>And if you use the <code>interceptUrlMap</code> approach, add the mapping to that property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugins.springsecurity.interceptUrlMap = &#91;
+   &#8230;
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
+   &#8230;
+&#93;</pre></div><p class="paragraph"/>
+        </div>
+        <div id="footer">
+             
+        </div>
+    
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-16219500-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</body>
+</html>
