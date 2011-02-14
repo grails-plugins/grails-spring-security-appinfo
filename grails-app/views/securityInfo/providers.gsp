@@ -1,5 +1,5 @@
 <head>
-	<title>Mappings</title>
+	<title>Authentication Providers</title>
 </head>
 
 <body>

@@ -1,5 +1,5 @@
 <head>
-	<title>Security Configuration</title>
+	<title>Security Configuration Values</title>
 </head>
 
 <body>

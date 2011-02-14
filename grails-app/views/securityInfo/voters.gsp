@@ -1,5 +1,5 @@
 <head>
-	<title>Mappings</title>
+	<title>Voters</title>
 </head>
 
 <body>

@@ -1,3 +1,3 @@
 <head>
-	<title>Manage</title>
+	<title>Security Configuration</title>
 </head>

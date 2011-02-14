@@ -1,5 +1,5 @@
 <head>
-	<title>Mappings</title>
+	<title>Logout Handlers</title>
 </head>
 
 <body>

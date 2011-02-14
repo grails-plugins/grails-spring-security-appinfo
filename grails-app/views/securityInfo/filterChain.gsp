@@ -1,5 +1,5 @@
 <head>
-	<title>Mappings</title>
+	<title>Filter Chains</title>
 </head>
 
 <body>
