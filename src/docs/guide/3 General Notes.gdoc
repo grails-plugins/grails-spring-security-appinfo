@@ -1,26 +1,34 @@
 h4. Securing Access
 
-Be sure to guard access to the @/securityInfo@ url since only authorized users should have access to this information. If you're using annotations, you can register a mapping in the @staticRules@ property in @Config.groovy@:
+Be sure to guard access to the @/securityInfo@ url since only authorized users should have access to this information. If you're using annotations, you can register mappings in the @staticRules@ property in @Config.groovy@:
 
 {code}
-grails.plugins.springsecurity.controllerAnnotations.staticRules = [
-   '/securityinfo/**': ['ROLE_ADMIN']
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+   ...
+   '/securityinfo':    ['ROLE_ADMIN'],
+   '/securityinfo.*':  ['ROLE_ADMIN'],
+   '/securityinfo/**': ['ROLE_ADMIN'],
+   ...
 ]
-{code}
-
-If you use database Requestmaps, create a new one:
 
 {code}
+
+If you use database Requestmaps, create new ones:
+
+{code}
+new Requestmap(url: '/securityinfo', configAttribute: 'ROLE_ADMIN').save()
+new Requestmap(url: '/securityinfo.*', configAttribute: 'ROLE_ADMIN').save()
 new Requestmap(url: '/securityinfo/**', configAttribute: 'ROLE_ADMIN').save()
 {code}
 
-And if you use the @interceptUrlMap@ approach, add the mapping to that property in @Config.groovy@:
+And if you use the @interceptUrlMap@ approach, add mappings to that property in @Config.groovy@:
 
 {code}
-grails.plugins.springsecurity.interceptUrlMap = [
+grails.plugin.springsecurity.interceptUrlMap = [
    ...
+   '/securityinfo':    ['ROLE_ADMIN'],
+   '/securityinfo.*':  ['ROLE_ADMIN'],
    '/securityinfo/**': ['ROLE_ADMIN'],
    ...
 ]
 {code}
-
