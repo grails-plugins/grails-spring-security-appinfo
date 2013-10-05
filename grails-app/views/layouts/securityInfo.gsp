@@ -9,18 +9,18 @@
 
 <body>
 
-<div class='nav'>
-	<span class='menuButton'><g:link action='config'>Config</g:link></span>
-	<span class='menuButton'><g:link action='mappings'>Mappings</g:link></span>
-	<span class='menuButton'><g:link action='currentAuth'>Auth</g:link></span>
-	<span class='menuButton'><g:link action='usercache'>User Cache</g:link></span>
-	<span class='menuButton'><g:link action='filterChain'>Filter Chains</g:link></span>
-	<span class='menuButton'><g:link action='logoutHandler'>Logout Handlers</g:link></span>
-	<span class='menuButton'><g:link action='voters'>Voters</g:link></span>
-	<span class='menuButton'><g:link action='providers'>Authentication Providers</g:link></span>
-</div>
-
-<g:javascript library='application' plugin='none' />
+	<div class="nav" role="navigation">
+		<ul>
+			<li><g:link action='config'>Config</g:link></li>
+			<li><g:link action='mappings'>Mappings</g:link></li>
+			<li><g:link action='currentAuth'>Auth</g:link></li>
+			<li><g:link action='usercache'>User Cache</g:link></li>
+			<li><g:link action='filterChains'>Filter Chains</g:link></li>
+			<li><g:link action='logoutHandler'>Logout Handlers</g:link></li>
+			<li><g:link action='voters'>Voters</g:link></li>
+			<li><g:link action='providers'>Authentication Providers</g:link></li>
+		</ul>
+	</div>
 <g:layoutBody />
 
 </body>
