@@ -1,4 +1,4 @@
-/* Copyright 2011 the original author or authors.
+/* Copyright 2011-2013 SpringSource.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,8 @@
  * limitations under the License.
  */
 class SpringSecurityAppinfoGrailsPlugin {
-	
 	String version = '1.0'
-	String grailsVersion = '1.2.3 > *'
-	Map dependsOn = [springSecurityCore: '0.1 > *']
-
+	String grailsVersion = '2.0 > *'
 	String author = 'Burt Beckwith'
 	String authorEmail = 'beckwithb@vmware.com'
 	String title = 'Spring Security Configuration Info plugin'

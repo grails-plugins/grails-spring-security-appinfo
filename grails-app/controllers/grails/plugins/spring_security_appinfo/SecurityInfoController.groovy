@@ -1,4 +1,4 @@
-/* Copyright 2011 the original author or authors.
+/* Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,43 +32,43 @@ class SecurityInfoController {
 	def springSecurityFilterChain
 	def userCache
 
-	def index = {}
+	def index() {}
 
-	def config = {
+	def config() {
 		[conf: new TreeMap(SpringSecurityUtils.securityConfig.flatten())]
 	}
 
-	def mappings = {
+	def mappings() {
 		// Map<Object, Collection<ConfigAttribute>>
 		[configAttributeMap: new TreeMap(objectDefinitionSource.configAttributeMap),
 		 securityConfigType: SpringSecurityUtils.securityConfig.securityConfigType]
 	}
 
-	def currentAuth = {
+	def currentAuth() {
 		[auth: SecurityContextHolder.context.authentication]
 	}
 
-	def usercache = {
+	def usercache() {
 		[cache: SpringSecurityUtils.securityConfig.cacheUsers ? userCache.cache : null]
 	}
 
-	def filterChain = {
+	def filterChain() {
 		[filterChainMap: springSecurityFilterChain.filterChainMap]
 	}
 
-	def logoutHandler = {
+	def logoutHandler() {
 		render view: 'logoutHandlers', model: [handlers: logoutHandlers]
 	}
 
-	def voters = {
+	def voters() {
 		[voters: accessDecisionManager.decisionVoters]
 	}
 
-	def providers = {
+	def providers() {
 		[providers: authenticationManager.providers]
 	}
 /*
-	def secureChannel = {
+	def secureChannel() {
 		def securityMetadataSource = channelProcessingFilter?.securityMetadataSource
 		render securityMetadataSource.getClass().name
 	}
