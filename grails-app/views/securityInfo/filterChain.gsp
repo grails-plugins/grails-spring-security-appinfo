@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Filter Chains</title>
 </head>
@@ -27,3 +29,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>

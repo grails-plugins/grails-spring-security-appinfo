@@ -58,8 +58,10 @@
 		<delete dir='grails-app/taglib'/>
 		<delete dir='grails-app/utils'/>
 		<delete dir='lib'/>
+		<delete dir='scripts'/>
 		<delete dir='src/groovy'/>
 		<delete dir='src/java'/>
+		<delete dir='test'/>
 		<delete dir='web-app'/>
 	</target>
 

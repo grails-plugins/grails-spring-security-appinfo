@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>User Cache</title>
 </head>
@@ -93,3 +95,5 @@
 </g:else>
 
 </body>
+
+</html>

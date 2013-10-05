@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Current Auth</title>
 </head>
@@ -35,3 +37,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>

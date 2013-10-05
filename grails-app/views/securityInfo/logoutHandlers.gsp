@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Logout Handlers</title>
 </head>
@@ -15,3 +17,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>

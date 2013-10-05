@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Authentication Providers</title>
 </head>
@@ -17,3 +19,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>

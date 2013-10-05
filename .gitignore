@@ -1,5 +1,8 @@
-stacktrace.log
+*.log
 /target
 /docs
 /grails-spring-security-appinfo-*.zip
+/grails-spring-security-appinfo-*.zip.sha1
 /plugin.xml
+web-app
+.settings

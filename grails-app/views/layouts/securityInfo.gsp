@@ -20,7 +20,6 @@
 	<span class='menuButton'><g:link action='providers'>Authentication Providers</g:link></span>
 </div>
 
-<g:javascript library='application' plugin='none' />
 <g:layoutBody />
 
 </body>

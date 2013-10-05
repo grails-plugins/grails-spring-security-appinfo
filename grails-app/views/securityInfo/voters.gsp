@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Voters</title>
 </head>
@@ -17,3 +19,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>

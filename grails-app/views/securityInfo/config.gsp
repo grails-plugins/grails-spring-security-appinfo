@@ -1,3 +1,5 @@
+<html>
+
 <head>
 	<title>Security Configuration Values</title>
 </head>
@@ -22,3 +24,5 @@
 	</tbody>
 </table>
 </body>
+
+</html>
