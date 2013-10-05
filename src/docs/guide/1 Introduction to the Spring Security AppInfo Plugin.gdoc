@@ -5,5 +5,7 @@ If you already have the spring-security-ui plugin installed you shouldn't instal
 {note}
 
 h4. Release History
+* October 5, 2013
+** 2.0-RC2 release
 * February 13, 2010
 ** initial 1.0 release

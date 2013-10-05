@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 class SpringSecurityAppinfoGrailsPlugin {
-	String version = '1.0'
+	String version = '2.0-RC2'
 	String grailsVersion = '2.0 > *'
 	String author = 'Burt Beckwith'
-	String authorEmail = 'beckwithb@vmware.com'
+	String authorEmail = 'burt@burtbeckwith.com'
 	String title = 'Spring Security Configuration Info plugin'
 	String description = 'Spring Security Configuration Info plugin'
 	String documentation = "http://grails.org/plugin/spring-security-appinfo"
