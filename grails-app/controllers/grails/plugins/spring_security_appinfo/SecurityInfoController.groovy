@@ -14,9 +14,9 @@
  */
 package grails.plugins.spring_security_appinfo
 
-import org.springframework.security.core.context.SecurityContextHolder
+import grails.plugin.springsecurity.SpringSecurityUtils
 
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import org.springframework.security.core.context.SecurityContextHolder
 
 /**
  * @author <a href='mailto:burt@burtbeckwith.com'>Burt Beckwith</a>
@@ -40,7 +40,7 @@ class SecurityInfoController {
 
 	def mappings() {
 		// Map<Object, Collection<ConfigAttribute>>
-		[configAttributeMap: new TreeMap(objectDefinitionSource.configAttributeMap),
+		[configAttributes: objectDefinitionSource.configAttributeMap,
 		 securityConfigType: SpringSecurityUtils.securityConfig.securityConfigType]
 	}
 
@@ -49,7 +49,7 @@ class SecurityInfoController {
 	}
 
 	def usercache() {
-		[cache: SpringSecurityUtils.securityConfig.cacheUsers ? userCache.cache : null]
+		[cache: SpringSecurityUtils.securityConfig.cacheUsers ? userCache.cache : false]
 	}
 
 	def filterChain() {
