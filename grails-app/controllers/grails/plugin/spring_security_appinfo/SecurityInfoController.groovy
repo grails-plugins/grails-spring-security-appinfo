@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package grails.plugins.spring_security_appinfo
+package grails.plugin.spring_security_appinfo
 
 import grails.plugin.springsecurity.SpringSecurityUtils
 
