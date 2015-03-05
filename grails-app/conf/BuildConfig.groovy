@@ -7,13 +7,15 @@ grails.project.dependency.resolution = {
 	log 'warn'
 
 	repositories {
+		mavenLocal()
 		grailsCentral()
+		mavenCentral()
 	}
 
 	plugins {
-		compile ':spring-security-core:2.0-RC2'
+		compile ':spring-security-core:2.0-RC4'
 
-		build ':release:2.2.1', ':rest-client-builder:1.0.3', {
+		build ':release:3.0.1', ':rest-client-builder:2.0.3', {
 			export = false
 		}
 	}
