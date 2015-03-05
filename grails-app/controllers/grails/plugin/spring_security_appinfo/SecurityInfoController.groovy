@@ -52,12 +52,12 @@ class SecurityInfoController {
 		[cache: SpringSecurityUtils.securityConfig.cacheUsers ? userCache.cache : false]
 	}
 
-	def filterChain() {
+	def filterChains() {
 		[filterChainMap: springSecurityFilterChain.filterChainMap]
 	}
 
-	def logoutHandler() {
-		render view: 'logoutHandlers', model: [handlers: logoutHandlers]
+	def logoutHandlers() {
+		[handlers: logoutHandlers]
 	}
 
 	def voters() {

@@ -20,9 +20,16 @@
 	<tr>
 		<td>${entry.key}</td>
 		<td>
+			<g:if test='${entry.value}'>
+			<ul>
 			<g:each var='filter' in='${entry.value}'>
-			${filter.getClass().name}<br/>
+			<li>${filter.getClass().name}</li>
 			</g:each>
+			</ul>
+			</g:if>
+			<g:else>
+			<i>none</i>
+			</g:else>
 		</td>
 	</tr>
 	</g:each>

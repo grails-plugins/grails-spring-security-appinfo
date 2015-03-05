@@ -78,6 +78,7 @@
 		</td>
 	</tr>
 
+	<tr><th colspan='2'>${cache.size} user${cache.size == 1 ? '' : 's'}</th></tr>
 	<tr>
 		<th>Username</th>
 		<th>User</th>

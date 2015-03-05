@@ -16,7 +16,7 @@
 			<li><g:link action='currentAuth'>Auth</g:link></li>
 			<li><g:link action='usercache'>User Cache</g:link></li>
 			<li><g:link action='filterChains'>Filter Chains</g:link></li>
-			<li><g:link action='logoutHandler'>Logout Handlers</g:link></li>
+			<li><g:link action='logoutHandlers'>Logout Handlers</g:link></li>
 			<li><g:link action='voters'>Voters</g:link></li>
 			<li><g:link action='providers'>Authentication Providers</g:link></li>
 		</ul>

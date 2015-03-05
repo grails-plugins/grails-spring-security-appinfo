@@ -6,7 +6,6 @@ Be sure to guard access to the @/securityInfo@ url since only authorized users s
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
    ...
    '/securityinfo':    ['ROLE_ADMIN'],
-   '/securityinfo.*':  ['ROLE_ADMIN'],
    '/securityinfo/**': ['ROLE_ADMIN'],
    ...
 ]
@@ -27,7 +26,6 @@ And if you use the @interceptUrlMap@ approach, add mappings to that property in 
 grails.plugin.springsecurity.interceptUrlMap = [
    ...
    '/securityinfo':    ['ROLE_ADMIN'],
-   '/securityinfo.*':  ['ROLE_ADMIN'],
    '/securityinfo/**': ['ROLE_ADMIN'],
    ...
 ]
