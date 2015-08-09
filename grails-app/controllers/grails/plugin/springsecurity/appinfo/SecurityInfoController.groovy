@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package grails.plugin.spring_security_appinfo
+package grails.plugin.springsecurity.appinfo
 
 import grails.plugin.springsecurity.SpringSecurityUtils
 
@@ -26,7 +26,6 @@ class SecurityInfoController {
 	def accessDecisionManager
 	def authenticationManager
 	def channelProcessingFilter
-	def logoutFilter
 	def logoutHandlers
 	def objectDefinitionSource
 	def springSecurityFilterChain

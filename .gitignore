@@ -1,8 +1,10 @@
+*.iml
+*.iws
 *.log
+*.sublime-workspace
+.DS_Store
+/.gradle
+/.idea
+/.settings
+/build
 /target
-/docs
-/grails-spring-security-appinfo-*.zip
-/grails-spring-security-appinfo-*.zip.sha1
-/plugin.xml
-web-app
-.settings

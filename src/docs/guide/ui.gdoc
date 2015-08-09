@@ -2,7 +2,7 @@ The plugin has one controller (@SecurityInfoController.groovy@) and is available
 
 h4. Configuration
 
-The Configuration menu item displays all security-related attributes in @Config.groovy@. The names omit the @grails.plugin.springsecurity@ prefix:
+The Configuration menu item displays all security-related attributes in @grails-app/conf/application.groovy@. The names omit the @grails.plugin.springsecurity@ prefix:
 
 !security_info_config.png!
 
@@ -49,4 +49,3 @@ h4. Authentication Providers
 The Authentication Providers menu item displays your registered @AuthenticationProvider@s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin (e.g. LDAP) might contribute one or more:
 
 !security_info_providers.png!
-

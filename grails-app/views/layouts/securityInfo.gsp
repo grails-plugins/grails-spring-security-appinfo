@@ -1,9 +1,13 @@
-<html>
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Security Configuration</title>
-<link rel='stylesheet' href="${resource(dir:'css',file:'main.css',plugin:'none')}" />
-<link rel='shortcut icon' href="${resource(dir:'images',file:'favicon.ico',plugin:'none')}" type='image/x-icon' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<asset:stylesheet src='main.css' />
+<asset:link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
 <g:layoutHead />
 </head>
 

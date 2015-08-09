@@ -1,4 +1,4 @@
-/* Copyright 2011-2015 SpringSource.
+/* Copyright 2011-2015 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,9 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-class SpringSecurityAppinfoGrailsPlugin {
-	String version = '2.0-RC2'
-	String grailsVersion = '2.3 > *'
+package grails.plugin.springsecurity.appinfo
+
+import grails.plugins.Plugin
+
+/**
+ * @author <a href='mailto:burt@burtbeckwith.com'>Burt Beckwith</a>
+ */
+class SpringSecurityAppinfoGrailsPlugin extends Plugin {
+	String grailsVersion = '3.0.0 > *'
 	String author = 'Burt Beckwith'
 	String authorEmail = 'burt@burtbeckwith.com'
 	String title = 'Spring Security Configuration Info plugin'
@@ -24,4 +30,6 @@ class SpringSecurityAppinfoGrailsPlugin {
 	def organization = [name: 'SpringSource', url: 'http://www.springsource.org/']
 	def issueManagement = [system: 'GITHUB', url: 'https://github.com/grails-plugins/grails-spring-security-appinfo/issues']
 	def scm = [url: 'https://github.com/grails-plugins/grails-spring-security-appinfo']
+	def loadAfter = ['springSecurityCore']
+	def profiles = ['web']
 }
