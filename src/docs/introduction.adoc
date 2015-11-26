@@ -1,10 +1,15 @@
+[[introduction]]
+== Introduction to the Spring Security AppInfo Plugin
+
 The Spring Security AppInfo plugin provides a UI to inspect your security configuration.
 
-{note}
+[NOTE]
+====
 If you already have the spring-security-ui plugin installed you shouldn't install this plugin, since it's part of that plugin. It's split out here into its own for users who want this information but not the entire UI plugin.
-{note}
+====
 
-h4. Release History
+=== Release History
+
 * August 16, 2015
 ** 3.0.0.M1 release
 * October 5, 2013

@@ -1,0 +1,38 @@
+[[notes]]
+== General Notes
+
+=== Securing Access
+
+Be sure to guard access to the `/securityInfo` url since only authorized users should have access to this information. If you're using annotations, you can register mappings in the `staticRules` property in `grails-app/conf/application.groovy`:
+
+[source,java]
+----
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+   ...
+   [pattern: '/securityinfo',    access: 'ROLE_ADMIN'],
+   [pattern: '/securityinfo.*',  access: 'ROLE_ADMIN'],
+   [pattern: '/securityinfo/**', access: 'ROLE_ADMIN']
+]
+----
+
+If you use database Requestmaps, create new ones:
+
+[source,java]
+----
+new Requestmap(url: '/securityinfo', configAttribute: 'ROLE_ADMIN').save()
+new Requestmap(url: '/securityinfo.*', configAttribute: 'ROLE_ADMIN').save()
+new Requestmap(url: '/securityinfo/**', configAttribute: 'ROLE_ADMIN').save()
+----
+
+And if you use the `interceptUrlMap` approach, add mappings to that property in `grails-app/conf/application.groovy`:
+
+[source,java]
+----
+grails.plugin.springsecurity.interceptUrlMap = [
+   ...
+   [pattern: '/securityinfo',    access: 'ROLE_ADMIN'],
+   [pattern: '/securityinfo.*',  access: 'ROLE_ADMIN'],
+   [pattern: '/securityinfo/**', access: 'ROLE_ADMIN']
+   ...
+]
+----
