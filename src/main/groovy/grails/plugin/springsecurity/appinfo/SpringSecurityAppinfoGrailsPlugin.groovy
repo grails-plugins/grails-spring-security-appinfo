@@ -27,7 +27,7 @@ class SpringSecurityAppinfoGrailsPlugin extends Plugin {
 	String description = 'Spring Security Configuration Info plugin'
 	String documentation = 'http://grails-plugins.github.io/grails-spring-security-appinfo/'
 	String license = 'APACHE'
-	def organization = [name: 'SpringSource', url: 'http://www.springsource.org/']
+	def organization = [name: 'Grails', url: 'http://www.grails.org/']
 	def issueManagement = [system: 'GITHUB', url: 'https://github.com/grails-plugins/grails-spring-security-appinfo/issues']
 	def scm = [url: 'https://github.com/grails-plugins/grails-spring-security-appinfo']
 	def loadAfter = ['springSecurityCore']

@@ -5,6 +5,4 @@
 .DS_Store
 /.gradle
 /.idea
-/.settings
 /build
-/target
