@@ -28,7 +28,7 @@ class SecurityInfoController {
 	def channelProcessingFilter
 	def logoutHandlers
 	def objectDefinitionSource
-	def springSecurityFilterChain
+	def securityFilterChains
 	def userCache
 
 	def index() {}
@@ -52,7 +52,7 @@ class SecurityInfoController {
 	}
 
 	def filterChains() {
-		[filterChainMap: springSecurityFilterChain.filterChainMap]
+		[securityFilterChains: securityFilterChains]
 	}
 
 	def logoutHandlers() {

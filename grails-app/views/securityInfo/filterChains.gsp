@@ -16,13 +16,13 @@
 	</tr>
 	</thead>
 	<tbody>
-	<g:each var='entry' in='${filterChainMap}'>
+	<g:each var='filterChain' in='${securityFilterChains}'>
 	<tr>
-		<td>${entry.key}</td>
+		<td>${filterChain.matcherPattern}</td>
 		<td>
-			<g:if test='${entry.value}'>
+			<g:if test='${filterChain.filters}'>
 			<ul>
-			<g:each var='filter' in='${entry.value}'>
+			<g:each var='filter' in='${filterChain.filters}'>
 			<li>${filter.getClass().name}</li>
 			</g:each>
 			</ul>
