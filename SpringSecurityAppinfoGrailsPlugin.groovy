@@ -1,4 +1,4 @@
-/* Copyright 2011-2015 SpringSource.
+/* Copyright 2011-2015 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ class SpringSecurityAppinfoGrailsPlugin {
 	String description = 'Spring Security Configuration Info plugin'
 	String documentation = 'http://grails-plugins.github.io/grails-spring-security-appinfo/'
 	String license = 'APACHE'
-	def organization = [name: 'SpringSource', url: 'http://www.springsource.org/']
-	def issueManagement = [system: 'GITHUB', url: 'https://github.com/grails-plugins/grails-spring-security-appinfo/issues']
+	def organization = [name: 'Grails', url: 'http://www.grails.org/']
+	def issueManagement = [url: 'https://github.com/grails-plugins/grails-spring-security-appinfo/issues']
 	def scm = [url: 'https://github.com/grails-plugins/grails-spring-security-appinfo']
 }
