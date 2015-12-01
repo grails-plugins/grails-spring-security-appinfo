@@ -13,5 +13,3 @@ include::introduction.adoc[]
 include::ui.adoc[]
 
 include::notes.adoc[]
-
-

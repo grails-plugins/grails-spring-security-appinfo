@@ -58,7 +58,7 @@ dependencies {
 	provided 'org.grails:grails-dependencies'
 	provided 'org.grails:grails-web-boot'
 
-	compile 'org.grails.plugins:spring-security-core:3.0.0.M1'
+	compile 'org.grails.plugins:spring-security-core:3.0.0.M3'
 }
 
 asciidoctor {
@@ -70,13 +70,13 @@ asciidoctor {
 	outputDir file('build/docs')
 	backends 'html5', 'pdf', 'epub3'
 	attributes 'source-highlighter': 'prettify',
-			  icons:               'font',
-			  setanchors:          'true',
-			  idprefix:            '',
-			  idseparator:         '-',
-			  toc2:                '',
-			  numbered:            '',
-			  revnumber:           project.version
+	            icons:               'font',
+	            setanchors:          'true',
+	            idprefix:            '',
+	            idseparator:         '-',
+	            toc2:                '',
+	            numbered:            '',
+	            revnumber:           project.version
 }
 
 task docs(dependsOn: asciidoctor) << {

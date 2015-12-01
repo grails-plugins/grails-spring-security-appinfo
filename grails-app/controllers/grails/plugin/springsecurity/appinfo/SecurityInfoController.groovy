@@ -15,7 +15,6 @@
 package grails.plugin.springsecurity.appinfo
 
 import grails.plugin.springsecurity.SpringSecurityUtils
-
 import org.springframework.security.core.context.SecurityContextHolder
 
 /**
@@ -38,7 +37,7 @@ class SecurityInfoController {
 	}
 
 	def mappings() {
-		// Map<Object, Collection<ConfigAttribute>>
+		// List<InterceptedUrl>
 		[configAttributes: objectDefinitionSource.configAttributeMap,
 		 securityConfigType: SpringSecurityUtils.securityConfig.securityConfigType]
 	}
