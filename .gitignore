@@ -5,4 +5,6 @@
 /grails-spring-security-appinfo-*.zip.sha1
 /plugin.xml
 web-app
+.classpath
+.project
 .settings
