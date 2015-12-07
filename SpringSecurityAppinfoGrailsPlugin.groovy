@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 class SpringSecurityAppinfoGrailsPlugin {
-	String version = '2.0-RC2'
+	String version = '2.0.0'
 	String grailsVersion = '2.3 > *'
 	List loadAfter = ['springSecurityCore']
 	String author = 'Burt Beckwith'
