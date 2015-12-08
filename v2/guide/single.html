@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>Spring Security AppInfo Plugin 2.0-RC2</title>
+        <title>Spring Security AppInfo Plugin 2.0.0</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
         <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
@@ -23,11 +23,11 @@ function addJsClass(el) {
                         <a href="../guide/index.html" class="button">Table of contents</a>
                         <div id="nav-summary-childs" style="display:none;">
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#1%20Introduction%20to%20the%20Spring%20Security%20AppInfo%20Plugin"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#2%20Security%20Configuration%20UI"><strong>2</strong><span>Security Configuration UI</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#ui"><strong>2</strong><span>Security Configuration UI</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#3%20General%20Notes"><strong>3</strong><span>General Notes</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#notes"><strong>3</strong><span>General Notes</span></a></div>
                             
                         </div>
                     </div>
@@ -56,7 +56,7 @@ function addJsClass(el) {
                         <div class="project">
                             <h1>Spring Security AppInfo Plugin - Reference Documentation</h1>
                             <p><strong>Authors:</strong> Burt Beckwith</p>
-                            <p><strong>Version:</strong> 2.0-RC2</p>
+                            <p><strong>Version:</strong> 2.0.0</p>
                             
                         </div>
 
@@ -64,22 +64,26 @@ function addJsClass(el) {
                         <div id="table-of-content">
                             <h2>Table of Contents</h2>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#1%20Introduction%20to%20the%20Spring%20Security%20AppInfo%20Plugin"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#2%20Security%20Configuration%20UI"><strong>2</strong><span>Security Configuration UI</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#ui"><strong>2</strong><span>Security Configuration UI</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#3%20General%20Notes"><strong>3</strong><span>General Notes</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#notes"><strong>3</strong><span>General Notes</span></a></div>
                             
                             <div style="clear:both" ></div>
                         </div>
                         
                         
 
-<h1 id="1 Introduction to the Spring Security AppInfo Plugin">1 Introduction to the Spring Security AppInfo Plugin</h1>
+<h1 id="introduction">1 Introduction to the Spring Security AppInfo Plugin</h1>
 The Spring Security AppInfo plugin provides a UI to inspect your security configuration.<p class="paragraph"/><blockquote class="note">
 If you already have the spring-security-ui plugin installed you shouldn't install this plugin, since it's part of that plugin. It's split out here into its own for users who want this information but not the entire UI plugin.
 </blockquote><p class="paragraph"/><h4>Release History</h4>
 <ul class="star">
+<li>December 7, 2015</li>
+<ul class="star">
+<li>2.0.0 release</li>
+</ul>
 <li>October 5, 2013</li>
 <ul class="star">
 <li>2.0-RC2 release</li>
@@ -90,15 +94,14 @@ If you already have the spring-security-ui plugin installed you shouldn't instal
 </ul></ul><p class="paragraph"/>
 
 
-<h1 id="2 Security Configuration UI">2 Security Configuration UI</h1>
+<h1 id="ui">2 Security Configuration UI</h1>
 The plugin has one controller (<code>SecurityInfoController.groovy</code>) and is available by navigating to <code>/appname/securityInfo</code>. There are eight menus:<p class="paragraph"/><h4>Configuration</h4><p class="paragraph"/>The Configuration menu item displays all security-related attributes in <code>Config.groovy</code>. The names omit the <code>grails.plugin.springsecurity</code> prefix:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_config.png"></img><p class="paragraph"/><h4>Mappings</h4><p class="paragraph"/>The Mappings menu item displays the current request mapping mode (Annotation, Requestmap, or Static) and all current mappings:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_mappings.png"></img><p class="paragraph"/><h4>Current Authentication</h4><p class="paragraph"/>The Current Authentication menu item displays your <code>Authentication</code> information, mostly for reference to see what a typical one contains:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_auth.png"></img><p class="paragraph"/><h4>User Cache</h4><p class="paragraph"/>The User Cache menu item displays information about cached users (this feature is disabled by default):<p class="paragraph"/><img border="0" class="center" src="../img/security_info_user_cache.png"></img><p class="paragraph"/><h4>Filter Chains</h4><p class="paragraph"/>The Filter Chains menu item displays your configured Filter chains. Typically there is just one chain, applied to all URLs<p class="paragraph"/><img border="0" class="center" src="../img/security_info_filter_chains.png"></img><p class="paragraph"/>It is possible to have multiple URL patterns each with its own filter chain, for example when using HTTP Basic Auth for a web service.<p class="paragraph"/><h4>Logout Handlers</h4><p class="paragraph"/>The Logout Handlers menu item displays your registered <code>LogoutHandler</code>s. Typically there will be just the two shown here, but you can register your own custom implementations, or a plugin might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_logout_handlers.png"></img><p class="paragraph"/><h4>Voters</h4><p class="paragraph"/>The Voters menu item displays your registered <code>AccessDecisionVoter</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_voters.png"></img><p class="paragraph"/><h4>Authentication Providers</h4><p class="paragraph"/>The Authentication Providers menu item displays your registered <code>AuthenticationProvider</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin (e.g. LDAP) might contribute one or more:<p class="paragraph"/><img border="0" class="center" src="../img/security_info_providers.png"></img><p class="paragraph"/>
 
 
-<h1 id="3 General Notes">3 General Notes</h1>
+<h1 id="notes">3 General Notes</h1>
 <h4>Securing Access</h4><p class="paragraph"/>Be sure to guard access to the <code>/securityInfo</code> url since only authorized users should have access to this information. If you're using annotations, you can register mappings in the <code>staticRules</code> property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugin.springsecurity.controllerAnnotations.staticRules = &#91;
    &#8230;
    '/securityinfo':    &#91;'ROLE_ADMIN'&#93;,
-   '/securityinfo.&#42;':  &#91;'ROLE_ADMIN'&#93;,
    '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
    &#8230;
 &#93;</pre></div><p class="paragraph"/>If you use database Requestmaps, create new ones:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo', configAttribute: 'ROLE_ADMIN').save()
@@ -106,7 +109,6 @@ The plugin has one controller (<code>SecurityInfoController.groovy</code>) and i
 <span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo/&#42;&#42;', configAttribute: 'ROLE_ADMIN').save()</pre></div><p class="paragraph"/>And if you use the <code>interceptUrlMap</code> approach, add mappings to that property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugin.springsecurity.interceptUrlMap = &#91;
    &#8230;
    '/securityinfo':    &#91;'ROLE_ADMIN'&#93;,
-   '/securityinfo.&#42;':  &#91;'ROLE_ADMIN'&#93;,
    '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
    &#8230;
 &#93;</pre></div>
@@ -137,17 +139,5 @@ The plugin has one controller (<code>SecurityInfoController.groovy</code>) and i
 
 <script type="text/javascript" src="../js/docs.js"></script>
 
-    
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-16219500-1']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
-</body>
+    </body>
 </html>

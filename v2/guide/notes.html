@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>1 Introduction to the Spring Security AppInfo Plugin 2.0-RC2</title>
+    <title>3 General Notes 2.0.0</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -24,13 +24,13 @@ function addJsClass() {
 
                 <div id="nav-summary-childs" style="display:none;">
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/1%20Introduction%20to%20the%20Spring%20Security%20AppInfo%20Plugin.html"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction to the Spring Security AppInfo Plugin</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/2%20Security%20Configuration%20UI.html"><strong>2</strong><span>Security Configuration UI</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/ui.html"><strong>2</strong><span>Security Configuration UI</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/3%20General%20Notes.html"><strong>3</strong><span>General Notes</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/notes.html"><strong>3</strong><span>General Notes</span></a>
                     </div>
                     
                 </div>
@@ -56,20 +56,20 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
+                    <div class="toc-item prev-left"><a href="../guide/ui.html">&lt;&lt; <strong>2</strong><span>Security Configuration UI</span></a></div>
+                
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../guide/2%20Security%20Configuration%20UI.html"><strong>2</strong><span>Security Configuration UI</span> >></a></div>
-                
 
 
                 <div class="project">
-                    <h1>1 Introduction to the Spring Security AppInfo Plugin - Reference Documentation</h1>
+                    <h1>3 General Notes - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Burt Beckwith</p>
 
-                    <p><strong>Version:</strong> 2.0-RC2</p>
+                    <p><strong>Version:</strong> 2.0.0</p>
 
                     
                 </div>
@@ -78,24 +78,26 @@ function addJsClass() {
 
                 
 
-<h1 id="1 Introduction to the Spring Security AppInfo Plugin">1 Introduction to the Spring Security AppInfo Plugin</h1>
-The Spring Security AppInfo plugin provides a UI to inspect your security configuration.<p class="paragraph"/><blockquote class="note">
-If you already have the spring-security-ui plugin installed you shouldn't install this plugin, since it's part of that plugin. It's split out here into its own for users who want this information but not the entire UI plugin.
-</blockquote><p class="paragraph"/><h4>Release History</h4>
-<ul class="star">
-<li>October 5, 2013</li>
-<ul class="star">
-<li>2.0-RC2 release</li>
-</ul>
-<li>February 13, 2010</li>
-<ul class="star">
-<li>initial 1.0 release</li>
-</ul></ul><p class="paragraph"/>
+<h1 id="notes">3 General Notes</h1>
+<h4>Securing Access</h4><p class="paragraph"/>Be sure to guard access to the <code>/securityInfo</code> url since only authorized users should have access to this information. If you're using annotations, you can register mappings in the <code>staticRules</code> property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugin.springsecurity.controllerAnnotations.staticRules = &#91;
+   &#8230;
+   '/securityinfo':    &#91;'ROLE_ADMIN'&#93;,
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
+   &#8230;
+&#93;</pre></div><p class="paragraph"/>If you use database Requestmaps, create new ones:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo', configAttribute: 'ROLE_ADMIN').save()
+<span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo.&#42;', configAttribute: 'ROLE_ADMIN').save()
+<span class="java&#45;keyword">new</span> Requestmap(url: '/securityinfo/&#42;&#42;', configAttribute: 'ROLE_ADMIN').save()</pre></div><p class="paragraph"/>And if you use the <code>interceptUrlMap</code> approach, add mappings to that property in <code>Config.groovy</code>:<p class="paragraph"/><div class="code"><pre>grails.plugin.springsecurity.interceptUrlMap = &#91;
+   &#8230;
+   '/securityinfo':    &#91;'ROLE_ADMIN'&#93;,
+   '/securityinfo/&#42;&#42;': &#91;'ROLE_ADMIN'&#93;,
+   &#8230;
+&#93;</pre></div>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item next-right"><a href="../guide/2%20Security%20Configuration%20UI.html"><strong>2</strong><span>Security Configuration UI</span> >></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/ui.html">&lt;&lt; <strong>2</strong><span>Security Configuration UI</span></a></div>
                 
                 <div style="clear:both"></div>
             </div>
@@ -121,17 +123,5 @@ If you already have the spring-security-ui plugin installed you shouldn't instal
 
 <script type="text/javascript" src="../js/docs.js"></script>
 
-
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-16219500-1']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
 </body>
 </html>
