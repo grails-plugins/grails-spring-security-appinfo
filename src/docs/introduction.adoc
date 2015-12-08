@@ -10,6 +10,8 @@ If you already have the spring-security-ui plugin installed you shouldn't instal
 
 === Release History
 
+* December 8, 2015
+** 3.0.0 release
 * August 16, 2015
 ** 3.0.0.M1 release
 * October 5, 2013
