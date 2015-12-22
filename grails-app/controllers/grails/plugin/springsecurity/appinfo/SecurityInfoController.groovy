@@ -15,31 +15,38 @@
 package grails.plugin.springsecurity.appinfo
 
 import grails.plugin.springsecurity.SpringSecurityUtils
+import grails.plugin.springsecurity.web.GrailsSecurityFilterChain
+import grails.plugin.springsecurity.web.access.intercept.AbstractFilterInvocationDefinition
+import org.springframework.security.access.AccessDecisionManager
+import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserCache
+import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource
+import org.springframework.security.web.authentication.logout.LogoutHandler
 
 /**
  * @author <a href='mailto:burt@burtbeckwith.com'>Burt Beckwith</a>
  */
 class SecurityInfoController {
 
-	def accessDecisionManager
-	def authenticationManager
-	def channelProcessingFilter
-	def logoutHandlers
-	def objectDefinitionSource
-	def securityFilterChains
-	def userCache
+	AccessDecisionManager accessDecisionManager
+	AuthenticationManager authenticationManager
+	FilterInvocationSecurityMetadataSource channelFilterInvocationSecurityMetadataSource
+	List<LogoutHandler> logoutHandlers
+	AbstractFilterInvocationDefinition objectDefinitionSource
+	List<GrailsSecurityFilterChain> securityFilterChains
+	UserCache userCache
 
 	def index() {}
 
 	def config() {
-		[conf: new TreeMap(SpringSecurityUtils.securityConfig.flatten())]
+		[conf: new TreeMap(conf.flatten())]
 	}
 
 	def mappings() {
 		// List<InterceptedUrl>
 		[configAttributes: objectDefinitionSource.configAttributeMap,
-		 securityConfigType: SpringSecurityUtils.securityConfig.securityConfigType]
+		 securityConfigType: conf.securityConfigType]
 	}
 
 	def currentAuth() {
@@ -47,7 +54,7 @@ class SecurityInfoController {
 	}
 
 	def usercache() {
-		[cache: SpringSecurityUtils.securityConfig.cacheUsers ? userCache.cache : false]
+		[cache: conf.cacheUsers ? userCache.cache : false]
 	}
 
 	def filterChains() {
@@ -65,10 +72,12 @@ class SecurityInfoController {
 	def providers() {
 		[providers: authenticationManager.providers]
 	}
-/*
+
 	def secureChannel() {
-		def securityMetadataSource = channelProcessingFilter?.securityMetadataSource
-		render securityMetadataSource.getClass().name
+		[requestMap: channelFilterInvocationSecurityMetadataSource?.requestMap]
 	}
-*/
+
+	protected ConfigObject getConf() {
+		SpringSecurityUtils.securityConfig
+	}
 }

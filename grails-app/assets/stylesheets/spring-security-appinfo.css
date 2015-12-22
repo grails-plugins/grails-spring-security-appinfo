@@ -1,0 +1,132 @@
+html * {
+	margin: 0;
+}
+
+a {
+	color:           #363636;
+	cursor:          pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	color:           #f30;
+	text-decoration: underline;
+}
+
+a:link, a:visited {
+	color: #039;
+}
+
+body {
+	background:   #fff;
+	color:        #333;
+	margin-left:  0px;
+	margin-right: 0px;
+}
+
+body, input, select, textarea {
+	font-family: Tahoma, verdana, arial, helvetica, sans-serif;
+	font-size:   0.9em;
+}
+
+caption {
+	font-family:    "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:    bold;
+	text-align:     center;
+	font-size:      1.5em;
+	padding: 20px 0;
+}
+
+h3 {
+	color:         #222222;
+	font-size:     1.2em;
+	font-weight:   bold;
+	line-height:   1;
+	margin-bottom: 1em;
+	text-align:    center;
+}
+
+table {
+	border-spacing:  0;
+	vertical-align:  middle;
+}
+
+table.info {
+	width: 100%;
+}
+
+table.info thead th {
+	background: #444;
+	color:      white;
+}
+
+td {
+	font-weight:    normal;
+}
+
+td, th {
+	padding:        8px 10px 8px 5px;
+	text-align:     left;
+	vertical-align: middle;
+}
+
+th {
+	font-weight: bold;
+}
+
+thead th {
+	background: #999;
+}
+
+tr.even td {
+	background: #ccc;
+}
+
+tr.odd td {
+	background: white;
+}
+
+.nav {
+	background-color: #efefef;
+	padding: 0.4em 0.1em;
+	-moz-box-shadow: 0 0 3px 1px #aaaaaa;
+	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+	box-shadow: 0 0 3px 1px #aaaaaa;
+	zoom: 1;
+	margin-bottom: 1em;
+}
+
+.nav a {
+	color: #666666;
+	display: block;
+	padding: 0.25em 0.7em;
+	text-decoration: none;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	border-radius: 0.3em;
+}
+
+.nav a:active, .nav a:visited {
+	color: #666;
+}
+
+.nav a:focus, .nav a:hover {
+	background-color: #999;
+	color: #fff;
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.nav li {
+	display: block;
+	float: left;
+	list-style-type: none;
+	margin-right: 0.5em;
+	padding: 0;
+}
+
+.nav ul {
+	overflow: hidden;
+	padding-left: 0;
+	zoom: 1;
+}
