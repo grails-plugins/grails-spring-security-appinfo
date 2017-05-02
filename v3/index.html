@@ -419,7 +419,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Spring Security AppInfo Plugin - Reference Documentation</h1>
 <div class="details">
 <span id="author" class="author">Burt Beckwith</span><br>
-<span id="revnumber">version 3.0.0</span>
+<span id="revnumber">version 3.0.1</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -429,21 +429,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#release-history">1.1. Release History</a></li>
 </ul>
 </li>
-<li><a href="#ui">2. Security Configuration UI</a>
+<li><a href="#installation">2. Installation</a></li>
+<li><a href="#ui">3. Security Configuration UI</a>
 <ul class="sectlevel2">
-<li><a href="#configuration">2.1. Configuration</a></li>
-<li><a href="#mappings">2.2. Mappings</a></li>
-<li><a href="#current-authentication">2.3. Current Authentication</a></li>
-<li><a href="#user-cache">2.4. User Cache</a></li>
-<li><a href="#filter-chains">2.5. Filter Chains</a></li>
-<li><a href="#logout-handlers">2.6. Logout Handlers</a></li>
-<li><a href="#voters">2.7. Voters</a></li>
-<li><a href="#authentication-providers">2.8. Authentication Providers</a></li>
+<li><a href="#configuration">3.1. Configuration</a></li>
+<li><a href="#mappings">3.2. Mappings</a></li>
+<li><a href="#current-authentication">3.3. Current Authentication</a></li>
+<li><a href="#user-cache">3.4. User Cache</a></li>
+<li><a href="#filter-chains">3.5. Filter Chains</a></li>
+<li><a href="#logout-handlers">3.6. Logout Handlers</a></li>
+<li><a href="#voters">3.7. Voters</a></li>
+<li><a href="#authentication-providers">3.8. Authentication Providers</a></li>
 </ul>
 </li>
-<li><a href="#notes">3. General Notes</a>
+<li><a href="#notes">4. General Notes</a>
 <ul class="sectlevel2">
-<li><a href="#securing-access">3.1. Securing Access</a></li>
+<li><a href="#securing-access">4.1. Securing Access</a></li>
 </ul>
 </li>
 </ul>
@@ -520,13 +521,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="ui">2. Security Configuration UI</h2>
+<h2 id="installation">2. Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Simply add an entry in the dependencies block of your <code>build.gradle</code> file, changing the version as needed:</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>build.gradle</code></div>
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">dependencies {
+   ...
+   compile 'org.grails.plugins:spring-security-appinfo:3.0.1'
+   ...</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ui">3. Security Configuration UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The plugin has one controller (<code>SecurityInfoController.groovy</code>) and is available by navigating to <code>/securityInfo</code>. There are eight menus:</p>
 </div>
 <div class="sect2">
-<h3 id="configuration">2.1. Configuration</h3>
+<h3 id="configuration">3.1. Configuration</h3>
 <div class="paragraph">
 <p>The Configuration menu item displays all security-related attributes in <code>grails-app/conf/application.groovy</code>. The names omit the <code>grails.plugin.springsecurity</code> prefix:</p>
 </div>
@@ -537,7 +555,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="mappings">2.2. Mappings</h3>
+<h3 id="mappings">3.2. Mappings</h3>
 <div class="paragraph">
 <p>The Mappings menu item displays the current request mapping mode (Annotation, Requestmap, or Static) and all current mappings:</p>
 </div>
@@ -548,7 +566,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="current-authentication">2.3. Current Authentication</h3>
+<h3 id="current-authentication">3.3. Current Authentication</h3>
 <div class="paragraph">
 <p>The Current Authentication menu item displays your <code>Authentication</code> information, mostly for reference to see what a typical one contains:</p>
 </div>
@@ -559,7 +577,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="user-cache">2.4. User Cache</h3>
+<h3 id="user-cache">3.4. User Cache</h3>
 <div class="paragraph">
 <p>The User Cache menu item displays information about cached users (this feature is disabled by default):</p>
 </div>
@@ -570,7 +588,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-chains">2.5. Filter Chains</h3>
+<h3 id="filter-chains">3.5. Filter Chains</h3>
 <div class="paragraph">
 <p>The Filter Chains menu item displays your configured Filter chains. Typically there is just one chain, applied to all URLs</p>
 </div>
@@ -584,7 +602,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="logout-handlers">2.6. Logout Handlers</h3>
+<h3 id="logout-handlers">3.6. Logout Handlers</h3>
 <div class="paragraph">
 <p>The Logout Handlers menu item displays your registered <code>LogoutHandler</code>s. Typically there will be just the two shown here, but you can register your own custom implementations, or a plugin might contribute one or more:</p>
 </div>
@@ -595,7 +613,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="voters">2.7. Voters</h3>
+<h3 id="voters">3.7. Voters</h3>
 <div class="paragraph">
 <p>The Voters menu item displays your registered <code>AccessDecisionVoter</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin might contribute one or more:</p>
 </div>
@@ -606,7 +624,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="authentication-providers">2.8. Authentication Providers</h3>
+<h3 id="authentication-providers">3.8. Authentication Providers</h3>
 <div class="paragraph">
 <p>The Authentication Providers menu item displays your registered <code>AuthenticationProvider</code>s. Typically there will be just the three shown here, but you can register your own custom implementations, or a plugin (e.g. LDAP) might contribute one or more:</p>
 </div>
@@ -619,10 +637,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="notes">3. General Notes</h2>
+<h2 id="notes">4. General Notes</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="securing-access">3.1. Securing Access</h3>
+<h3 id="securing-access">4.1. Securing Access</h3>
 <div class="paragraph">
 <p>Be sure to guard access to the <code>/securityInfo</code> url since only authorized users should have access to this information. If you&#8217;re using annotations, you can register mappings in the <code>staticRules</code> property in <code>grails-app/conf/application.groovy</code>:</p>
 </div>
@@ -666,8 +684,8 @@ new Requestmap(url: '/securityinfo/**', configAttribute: 'ROLE_ADMIN').save()</c
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 3.0.0<br>
-Last updated 2015-12-08 05:27:25 -05:00
+Version 3.0.1<br>
+Last updated 2017-05-02 13:50:04 UTC
 </div>
 </div>
 </body>
