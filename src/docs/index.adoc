@@ -10,6 +10,8 @@ Burt Beckwith
 
 include::introduction.adoc[]
 
+include::installation.adoc[]
+
 include::ui.adoc[]
 
 include::notes.adoc[]

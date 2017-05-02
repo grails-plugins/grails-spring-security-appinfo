@@ -1,0 +1,15 @@
+[[installation]]
+== Installation
+
+Simply add an entry in the dependencies block of your `build.gradle` file, changing the version as needed:
+
+[source,groovy]
+[subs="attributes"]
+.`build.gradle`
+----
+dependencies {
+   ...
+   compile 'org.grails.plugins:spring-security-appinfo:{project-version}'
+   ...
+----
+
